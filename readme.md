@@ -1,4 +1,4 @@
 nft contract address: 0xeF29b25bcFb634aeF4e0ffA919409f4fCD41E244
 ipfs folder: ipfs://QmPLRr5WWHmv6B5gaapAqL9onc1sKSkAny7dE6ng2pHWGA/
 
-metada example: metadata-example.json
+metada example: https://github.com/wu3fsh/NFTs/blob/main/metadata-example.json
