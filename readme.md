@@ -3,4 +3,4 @@ ipfs folder: ipfs://QmPLRr5WWHmv6B5gaapAqL9onc1sKSkAny7dE6ng2pHWGA/
 
 metadata example: https://github.com/wu3fsh/NFTs/blob/main/metadata-example.json
 
-collection: https://testnets.opensea.io/collection/first-eg5llxugkt
+collection: https://testnets.opensea.io/collection/nfttoken-xan0cypfe5
