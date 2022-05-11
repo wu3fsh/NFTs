@@ -3,4 +3,4 @@ ipfs folder: ipfs://QmPLRr5WWHmv6B5gaapAqL9onc1sKSkAny7dE6ng2pHWGA/
 
 metadata example: https://github.com/wu3fsh/NFTs/blob/main/metadata-example.json
 
-collection: https://testnets.opensea.io/0xc862eBB2Edabae0349DDF99970E825F2D2ce969F?search[sortBy]=LAST_TRANSFER_DATE&search[sortAscending]=false
+collection: https://testnets.opensea.io/collection/first-eg5llxugkt
