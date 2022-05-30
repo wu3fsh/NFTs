@@ -17,7 +17,6 @@ describe("Nft", function () {
   it("should create a nft contact with default settings", async function () {
     expect(await nftContract.getBaseTokenUri()).equal("ipfs://QmPLRr5WWHmv6B5gaapAqL9onc1sKSkAny7dE6ng2pHWGA/");
     expect(await nftContract.getMaxAllowedTokensAmount()).equal(10);
-    expect(await nftContract.getMintedTokensAmount()).equal(0);
   });
 
   it("should set new baseTokenUri", async function () {
@@ -28,7 +27,7 @@ describe("Nft", function () {
   });
 
   it("should mint a new token", async function () {
-    await nftContract.mint(owner.getAddress());
+    await nftContract.mint(owner.getAddress(), 1);
   });
 
   it("should return a tokenUri", async function () {
@@ -38,26 +37,14 @@ describe("Nft", function () {
     expect(await nftContract.tokenURI(tokenId)).equal(expectedUri);
   });
 
-  it("should throw an exception if the maximum amount of tokens is reached", async function () {
+  it("should throw an exception if tokenId out of the allowable range", async function () {
     const address: string = await owner.getAddress();
-    expect(await nftContract.getMintedTokensAmount()).equal(0);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
-    await nftContract.mint(address);
 
     try {
-      expect(await nftContract.mint(address)
+      expect(await nftContract.mint(address, 11)
       ).to.throw();
     } catch (error: unknown) {
-      expect(error instanceof Error ? error.message : "").to.have.string("Reached max tokens, cannnot mint any more");
+      expect(error instanceof Error ? error.message : "").to.have.string("TokenId should be in the range from 1 to 10");
     }
   });
 
